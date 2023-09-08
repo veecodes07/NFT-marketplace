@@ -1,0 +1,21 @@
+Check below,I faced same thing:
+
+
+
+truffle(development)> kryptoBird.balanceOf('0xCD89a79AF99b1B5fa226bC54b9F84940948c844C');
+
+BN { negative: 0, words: [ 2, <1 empty item> ], length: 1, red: null }
+
+truffle(development)> kryptoBird.totalSupply()
+
+BN { negative: 0, words: [ 2, <1 empty item> ], length: 1, red: null }
+
+truffle(development)> kryptoBird.totalSupply().then(function(balance){balanceInstance=balance})
+
+undefined
+
+truffle(development)> balanceInstance.words[0]
+
+2
+
+truffle(development)>
