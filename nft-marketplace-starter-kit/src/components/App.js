@@ -16,11 +16,7 @@ class App extends Component {
     async loadWeb3() {
         const provider = await detectEthereumProvider();
 
-        // modern browsers
-        // if there is a provider then lets
-        // lets log that it's working and access the window from the doc
-        // to set Web3 to the provider 
-        
+       
         if(provider) {
             console.log('ethereum wallet is connected')
             window.web3 = new Web3(provider)
@@ -41,12 +37,7 @@ class App extends Component {
         const networkData = KryptoBird.networks[networkId]
          if(networkData) {
              // EXERCISE TIME!!!! :)
-             // 1. create a var abi set to the Kryptobird abi
-             // 2. create a var address set to networkData address
-             // 3. create a var contract which grabs a 
-             //new instance of web3 eth Contract  
-             // 4. log in the console the var contract successfully - GOOD LUCK!!!!
-
+           
              const abi = KryptoBird.abi;
              const address = networkData.address; 
              const contract = new web3.eth.Contract(abi, address)
@@ -61,7 +52,7 @@ class App extends Component {
             // load KryptoBirdz
             for(let i = 1; i <= totalSupply; i++) {
                 const KryptoBird = await contract.methods.kryptoBirdz(i - 1).call()
-                // how should we handle the state on the front end? 
+              
                 this.setState({
                     kryptoBirdz:[...this.state.kryptoBirdz, KryptoBird]
                 })
